@@ -1,0 +1,142 @@
+/* =============================================================
+   shared.css — Mossland Design
+   Tokens, typography baseline, layout primitives
+   ============================================================= */
+
+/* ── Fonts ── */
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&display=swap");
+
+/* ── Tokens ── */
+:root {
+  /* Colors */
+  --color-paper: #ede5cf;
+  --color-ink: #150f08;
+  --color-moss: #2b4816;
+  --color-moss-lt: #68a83e;
+  --color-rule: #bfac88;
+  --color-muted: #6e6150;
+
+  /* Spacing */
+  --sp-2xl: 96px;
+  --sp-xl: 80px;
+  --sp-lg: 64px;
+  --sp-md: 40px;
+  --sp-sm: 24px;
+  --sp-xs: 14px;
+
+  --pad-x: clamp(40px, 8vw, 140px);
+}
+
+@media (max-width: 768px) {
+  :root {
+    --pad-x: 24px;
+    --sp-2xl: 64px;
+    --sp-xl: 48px;
+    --sp-lg: 40px;
+    --sp-md: 28px;
+    --sp-sm: 20px;
+  }
+}
+
+/* ── Reset ── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Base ── */
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: "EB Garamond", Georgia, serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--color-moss);
+  outline-offset: 3px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* ── Pill tag ── */
+.pill {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-moss);
+  border: 1px solid var(--color-moss);
+  padding: 3px 9px;
+  display: inline-block;
+}
+
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+/* ── Location / meta ── */
+.meta-loc {
+  font-size: clamp(13px, 1.1vw, 15px);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  line-height: 1.7;
+  font-family: "EB Garamond", Georgia, serif;
+  margin-bottom: 8px;
+}
+
+/* ── Site footer ── */
+.site-footer {
+  border-top: 1px solid var(--color-rule);
+  padding: 18px var(--pad-x);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: clamp(13px, 1.1vw, 15px);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  font-family: "EB Garamond", Georgia, serif;
+}
+
+.site-footer a {
+  color: var(--color-moss);
+  transition: color 0.12s;
+}
+
+.site-footer a:hover {
+  color: var(--color-ink);
+}
+
+@media (max-width: 600px) {
+  .site-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+}
+
+/* ── Focus & accessibility ── */
+:focus-visible {
+  outline: 2px solid var(--color-moss);
+  outline-offset: 2px;
+}
