@@ -6,7 +6,7 @@
 /* ── HEADER PLATE ── */
 .plate {
   background: var(--color-ink);
-  padding: 32px var(--pad-x) 26px;
+  padding: 48px var(--pad-x) 26px;
 }
 
 .wordmark {
